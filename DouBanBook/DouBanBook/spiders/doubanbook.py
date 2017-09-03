@@ -108,7 +108,7 @@ class DoubanbookSpider(scrapy.Spider):
 
     def parse_comment(self, response):
         item = DouBanBookCommentItem()
-        item['title'], item['book_id'], item['comment_score'], item['comment_quantity'] = response.meta['title'], response.meta['book_id'], response.meta['comment_score'], response.meta['comment_quantity']
+        item['tag'], item['title'], item['book_id'], item['comment_score'], item['comment_quantity'] = response.meta['tag'], response.meta['title'], response.meta['book_id'], response.meta['comment_score'], response.meta['comment_quantity']
 
         types = response.xpath("//div[@class='rating_detail_wrap clearfix']/div[@class='rating_detail_star']/text()").extract()
         datas = [t.strip() for t in types if len(t.strip()) != 0]
