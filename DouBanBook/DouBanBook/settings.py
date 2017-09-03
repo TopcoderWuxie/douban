@@ -79,7 +79,7 @@ MAIL_FROM='17839192987@163.com'
 MAIL_HOST='smtp.163.com'
 MAIL_PORT=25
 MAIL_USER='17839192987@163.com'
-MAIL_PASS='wuxiushu19960815'
+MAIL_PASS='****************'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
