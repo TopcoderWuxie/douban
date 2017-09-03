@@ -59,5 +59,5 @@ CREATE TABLE `comments` (
   `reading_now` varchar(255) DEFAULT NULL COMMENT '在读',
   `wish_read` varchar(255) DEFAULT NULL COMMENT '想读',
   PRIMARY KEY (`id`),
-  UNIQUE KEY (`book_id`)
+  UNIQUE KEY (`tag`, `book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 COMMENT='评论信息';
