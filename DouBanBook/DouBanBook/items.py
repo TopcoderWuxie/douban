@@ -37,6 +37,7 @@ class DouBanBookTagsItem(scrapy.Item):
     summary = scrapy.Field()            # 简介
 
 class DouBanBookCommentItem(scrapy.Item):
+    tag = scrapy.Field()                # 所属标签
     title = scrapy.Field()              # 书名
     book_id = scrapy.Field()            # 书籍ID
     comment_score = scrapy.Field()      # 评分

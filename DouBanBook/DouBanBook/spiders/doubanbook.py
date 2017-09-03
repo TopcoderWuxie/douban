@@ -104,7 +104,7 @@ class DoubanbookSpider(scrapy.Spider):
         yield item
 
         url = response.xpath("//div[@class='rating_sum']/span/a/@href").extract_first()
-        yield scrapy.Request(response.urljoin(url), callback= self.parse_comment, meta= {'title' : item['title'], 'book_id' : item['book_id'], 'comment_score' : item['comment_score'], 'comment_quantity' : item['comment_quantity']}, dont_filter= True)
+        yield scrapy.Request(response.urljoin(url), callback= self.parse_comment, meta= {'tag' : item['tag'], 'title' : item['title'], 'book_id' : item['book_id'], 'comment_score' : item['comment_score'], 'comment_quantity' : item['comment_quantity']}, dont_filter= True)
 
     def parse_comment(self, response):
         item = DouBanBookCommentItem()

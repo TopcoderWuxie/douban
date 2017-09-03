@@ -21,7 +21,7 @@ class DouBanBookPipeline(object):
         )
         self.insert_categories = "insert into categories(category, tag, url, num) values('%s', '%s', '%s', '%s')"
         self.insert_books = "insert into books(tag, title, book_id, book_url, author, author_url, publish_company, subtitle, original_name, translator, translator_url, publish_year, pages, price, binding, series, series_url, ISBN, comment_score, comment_quantity, summary) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')"
-        self.insert_comments = "insert into comments(title, book_id, comment_score, comment_quantity, recommend_strongly, recommend, just_so_so, a_little_bad, so_bad, already_read, reading_now, wish_read) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')"
+        self.insert_comments = "insert into comments(tag, title, book_id, comment_score, comment_quantity, recommend_strongly, recommend, just_so_so, a_little_bad, so_bad, already_read, reading_now, wish_read) values('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')"
 
     def process_item(self, item, spider):
         self.cur = self.conn.cursor()
@@ -41,7 +41,7 @@ class DouBanBookPipeline(object):
                 self.conn.rollback()
         elif isinstance(item, DouBanBookCommentItem):
             try:
-                self.cur.execute(self.insert_comments % (item['title'], item['book_id'], item['comment_score'], item['comment_quantity'], item['recommend_strongly'], item['recommend'], item['just_so_so'], item['a_little_bad'], item['so_bad'], item['already_read'], item['reading_now'], item['wish_read']))
+                self.cur.execute(self.insert_comments % (item['tag'], item['title'], item['book_id'], item['comment_score'], item['comment_quantity'], item['recommend_strongly'], item['recommend'], item['just_so_so'], item['a_little_bad'], item['so_bad'], item['already_read'], item['reading_now'], item['wish_read']))
                 self.conn.commit()
             except Exception as e:
                 print e
