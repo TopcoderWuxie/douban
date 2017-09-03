@@ -36,4 +36,4 @@ DOWNLOAD_DELAY = 1
 这里代码中并没有进行修改，因为爬虫已经爬取了好久了，数据也获取了很大一部分。如果感兴趣的读者想进行修改的话，只需要修改下面几个地方：
 - 表**categories**的唯一键，加上tag标签
 - 表**comments**中添加上tag列
-- 爬虫代码**doubanbook.py**中在往**parse_comment**函数中传值的时候加上**tag*这个标签即可。
+- 爬虫代码**doubanbook.py**中在往**parse_comment**函数中传值的时候加上**tag**这个标签即可。
