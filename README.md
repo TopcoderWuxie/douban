@@ -37,6 +37,7 @@ DOWNLOAD_DELAY = 1
 - 表**categories**的唯一键，加上tag标签
 - 表**comments**中添加上tag列
 - 爬虫代码**doubanbook.py**中在往**parse_comment**函数中传值的时候加上**tag**这个标签即可。
+
 (上面的问题已经进行了修改)
 
 ## star
