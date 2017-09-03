@@ -40,7 +40,7 @@ CREATE TABLE `books` (
   `comment_quantity` varchar(255) DEFAULT NULL COMMENT '评论数量',
   `summary` text DEFAULT NULL COMMENT '简介',
   PRIMARY KEY (`id`),
-  UNIQUE KEY (`book_id`)
+  UNIQUE KEY (`tag`, `book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 COMMENT='书籍信息';
 
 DROP TABLE IF EXISTS `comments`;
